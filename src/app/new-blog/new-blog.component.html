@@ -1,0 +1,22 @@
+<form  [formGroup]="form" class="example-container">
+	<mat-form-field>
+		<input  matInput placeholder="Title" name="title"  formControlName="title">
+    <mat-error class="error-message" *ngIf="form.get('title').hasError('maxlength')">Title must be 30 characters max</mat-error>
+    <mat-error class="error-message" *ngIf="form.get('title').hasError('required')
+     && (!form.get('title').pristine || form.get('title').touched)">Title is required</mat-error>
+  </mat-form-field>
+
+	<mat-form-field>
+		<textarea matInput placeholder="Body" formControlName="body" rows="6" name="body"></textarea>
+    <mat-error class="error-message" *ngIf="form.get('title').hasError('required')
+     && (!form.get('title').pristine || form.get('title').touched)">Body is required</mat-error>
+	</mat-form-field>
+
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="createBlog()" [disabled]="!form.valid">Create</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+  </div>
+
+
+</form>

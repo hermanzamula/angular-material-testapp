@@ -1,0 +1,17 @@
+
+<div *ngFor="let blog of blogs">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{blog.title}}</mat-card-title>
+      <mat-card-subtitle>{{blog.userName}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{blog.body}}
+      </p>
+    </mat-card-content>
+<!--    <mat-card-actions>
+    </mat-card-actions>-->
+  </mat-card>
+</div>
+<mat-divider></mat-divider>
